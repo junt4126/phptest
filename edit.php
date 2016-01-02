@@ -1,6 +1,5 @@
 <?php
-$user = "sa";
-$pass = "jtakaha4";
+require_once 'db_config.php';
 try{
     if  (empty($_GET['id'])) throw new Exception('Error');
     $id = (int) $_GET['id'];
@@ -48,9 +47,10 @@ catch (Exception $e) {
              作り方：
             <textarea name="howto" cols="40" rows="4"><?php echo htmlspecialchars($result['howto'], ENT_QUOTES, 'UTF-8');?></textarea>
             <br>  
-            <input type="hidden" name="id" value="<?php echo htmlspesialchars($result['id'], ENT_QUOTES, 'UTF-8');?>">
+            <input type="hidden" name="id" value="<?php echo htmlspecialchars($result['id'], ENT_QUOTES, 'UTF-8');?>">
             <input type="submit" value="送信">
         </form>
+        
     </body>
  </html>
  
